@@ -1,4 +1,4 @@
-var cool = require('cool-ascii-faces');//this will activate a package that will update the heroku code based on the local changes
+var cool = require('cool-ascii-faces');
 
 var express = require('express');
 var app = express();
