@@ -1,8 +1,6 @@
-var cool = require('cool-ascii-faces');
-
-var express = require('express');
-var app = express();
-
+const cool = require('cool-ascii-faces');
+const express = require('express');
+const app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -12,12 +10,14 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-app.get('/', function(request, response) {
-  response.render('pages/index');
+app.get('/',(req, res) =>{
+  response.render('pages/index')
 });
-app.get('/cool', (req, res) =>{
-  res.send(cool())
-})
-app.listen(app.get('port'), function() {
+
+app.get('/cool',(req, res) =>{
+  response.send(cool());
+});
+
+app.listen(app.get('port'), () => {
   console.log('Node app is running on port', app.get('port'));
 });
